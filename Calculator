@@ -19,7 +19,7 @@ int main()
 {
 
     printf("Welcome to the calculator! Our operations are:\n\n");
-    printf(" 1: Adition\n 2: Subtraction\n 3: Multiplication\n 4: Division\n 5: Square Root\n 6: Matrix Generator\n 7: Factorial \n");
+    printf(" 1: Adition\n 2: Subtraction\n 3: Multiplication\n 4: Division\n 5: Square Root\n 6: Matrix Generator\n 7: Factorial\n 8: Exit\n");
     printf("\nInsert your operation:\n");
     do
     {
@@ -49,11 +49,14 @@ int main()
         case 7:
             fact();
             break;
+        case 8:
+            printf("Goodbye!");
+            break;
 
         default:
             printf("INVALID OPTION! PLEASE, TRY AGAIN: \n");
         }
-    } while (entry != 7 && entry != 1);
+    } while (entry != 8);
 
     return 0;
 }
