@@ -49,7 +49,7 @@ void sum(void){
     scanf("%f", &A);
     printf("Insert B:\n");
     scanf("%f", &B);
-    printf("The result is: %.2f \n", A, B, A+B);
+    printf("The result is: %.2f \n", A+B);
 }
 
 void sub(void){
