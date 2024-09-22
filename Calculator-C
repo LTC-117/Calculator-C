@@ -93,7 +93,7 @@ void sqt(void){
     printf("Insert the number:\n");
     scanf("%f", &S);
     if(S>=0){
-    printf("The result is: %.2f \n", sqrt(S));
+        printf("The result is: %.2f \n", sqrt(S));
     }
     else{
         printf("ERROR! \n");
