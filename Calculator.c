@@ -23,9 +23,7 @@ int main (){
     do{
         printf("\nInsert your operation: ");
         scanf("%d", &entry);
-
         switch(entry){
-
             case 1: sum(); break;
             case 2: sub(); break;
             case 3: multi(); break;
@@ -34,7 +32,6 @@ int main (){
             case 6: matrix(); break;
             case 7: fact(); break;
             case 8: printf("Goodbye!"); break;
-
             default: printf("INVALID OPTION! PLEASE, TRY AGAIN: \n");
         }
     } while (entry != 8);
