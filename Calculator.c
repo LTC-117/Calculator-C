@@ -2,10 +2,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-//variables:
-float A,B,S;
-int m, n, num, entry;
-
 //functions:
 void sum();
 void sub();
@@ -16,6 +12,8 @@ void matrix();
 void fact();
 
 int main (){
+    int entry;
+
     printf("Welcome to the calculator! Our operations are:\n\n");
     printf(" 1: Adition\n 2: Subtraction\n 3: Multiplication\n 4: Division\n");
     printf(" 5: Square Root\n 6: Matrix Generator\n 7: Factorial\n 8: Exit \n");
@@ -105,6 +103,7 @@ void multi(void){
 }
 
 void divis(void){
+    float A, B;
 
     printf("\nDIVISION! \n");
     printf("Insert A:\n");
@@ -120,6 +119,7 @@ void divis(void){
 }
 
 void sqt(void){
+    float S;
 
     printf("\nSQUARE ROOT! \n");
     printf("Insert the number:\n");
@@ -133,6 +133,7 @@ void sqt(void){
 }
 
 void matrix(void){
+    int m, n;
 
     printf("\nMATRIX GENERATOR! \n");
     printf("Insert the amount of lines:\n");
@@ -168,6 +169,7 @@ void matrix(void){
 }
 
 void fact(void){
+    int num;
 
     printf("\nFACTORIAL! \n");
     printf("Insert the number: \n");
