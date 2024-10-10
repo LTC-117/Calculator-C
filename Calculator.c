@@ -62,7 +62,7 @@ void sub(void){
     int amount_sub;
 
     printf("\nSUBTRACTION!\n");
-    printf("How many numbers would you like to add? ");
+    printf("How many numbers would you like to subtract? ");
     scanf("%d", &amount_sub);
     printf("Insert the %d numbers:\n", amount_sub);
 
@@ -84,7 +84,7 @@ void multi(void){
     int amount_multi;
 
     printf("\nMULTIPLICATION!\n");
-    printf("How many numbers would you like to add? ");
+    printf("How many numbers would you like to multiply? ");
     scanf("%d", &amount_multi);
     printf("Insert the %d numbers:\n", amount_multi);
 
