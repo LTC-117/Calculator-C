@@ -16,7 +16,6 @@ void matrix();
 void fact();
 
 int main (){
-
     printf("Welcome to the calculator! Our operations are:\n\n");
     printf(" 1: Adition\n 2: Subtraction\n 3: Multiplication\n 4: Division\n");
     printf(" 5: Square Root\n 6: Matrix Generator\n 7: Factorial\n 8: Exit \n");
@@ -31,7 +30,7 @@ int main (){
             case 5: sqt(); break;
             case 6: matrix(); break;
             case 7: fact(); break;
-            case 8: printf("Goodbye!"); break;
+            case 8: printf("\nGOODBYE!"); break;
             default: printf("INVALID OPTION! PLEASE, TRY AGAIN: \n");
         }
     } while (entry != 8);
@@ -40,33 +39,69 @@ int main (){
 }
 
 void sum(void){
+    int amount_sum;
 
-    printf("\nADITION! \n");
-    printf("Insert A:\n");
-    scanf("%f", &A);
-    printf("Insert B:\n");
-    scanf("%f", &B);
-    printf("The result is: %.2f \n", A+B);
+    printf("\nADITION!\n");
+    printf("How many numbers would you like to add? ");
+    scanf("%d", &amount_sum);
+    printf("Insert the %d numbers:\n", amount_sum);
+
+    float *num_sum = (float *)malloc(amount_sum * sizeof(float));
+    float result_sum = 0;
+
+    for(int i=0; i<amount_sum; i++){
+        printf("Number %d: ", i+1);
+        scanf("%f", num_sum);
+        result_sum += *num_sum;
+    }
+
+    printf("Result is: %.2f", result_sum);
+
+    free(num_sum);
 }
 
 void sub(void){
+    int amount_sub;
 
-    printf("\nSUBTRACTION! \n");
-    printf("Insert A:\n");
-    scanf("%f", &A);
-    printf("Insert B:\n");
-    scanf("%f", &B);
-    printf("The result is: %.2f \n", A-B);
+    printf("\nSUBTRACTION!\n");
+    printf("How many numbers would you like to add? ");
+    scanf("%d", &amount_sub);
+    printf("Insert the %d numbers:\n", amount_sub);
+
+    float *num_sub = (float *)malloc(amount_sub * sizeof(float));
+    float result_sub = 0;
+
+    for(int i=0; i<amount_sub; i++){
+        printf("Number %d: ", i+1);
+        scanf("%f", num_sub);
+        result_sub -= *num_sub;
+    }
+
+    printf("Result is: %.2f", result_sub);
+
+    free(num_sub);
 }
 
 void multi(void){
+    int amount_multi;
 
-    printf("\nMULTIPLICATION! \n");
-    printf("Insert A:\n");
-    scanf("%f", &A);
-    printf("Insert B:\n");
-    scanf("%f", &B);
-    printf("The result is: %.2f \n", A*B);
+    printf("\nMULTIPLICATION!\n");
+    printf("How many numbers would you like to add? ");
+    scanf("%d", &amount_multi);
+    printf("Insert the %d numbers:\n", amount_multi);
+
+    float *num_multi = (float *)malloc(amount_multi * sizeof(float));
+    float result_multi = 1;
+
+    for(int i=0; i<amount_multi; i++){
+        printf("Number %d: ", i+1);
+        scanf("%f", num_multi);
+        result_multi *= *num_multi;
+    }
+
+    printf("Result is: %.2f", result_multi);
+
+    free(num_multi);
 }
 
 void divis(void){
