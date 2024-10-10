@@ -49,7 +49,7 @@ void sum(void){
 
     for(int i=0; i<amount_sum; i++){
         printf("Number %d: ", i+1);
-        scanf("%f", num_sum);
+        scanf("%f", &num_sum[i]);
         result_sum += *num_sum;
     }
 
@@ -71,7 +71,7 @@ void sub(void){
 
     for(int i=0; i<amount_sub; i++){
         printf("Number %d: ", i+1);
-        scanf("%f", num_sub);
+        scanf("%f", &num_sub[i]);
         result_sub -= *num_sub;
     }
 
@@ -93,7 +93,7 @@ void multi(void){
 
     for(int i=0; i<amount_multi; i++){
         printf("Number %d: ", i+1);
-        scanf("%f", num_multi);
+        scanf("%f", &num_multi[i]);
         result_multi *= *num_multi;
     }
 
@@ -170,6 +170,7 @@ void matrix(void){
 
 void fact(void){
     int num;
+    unsigned long long result = 1;
 
     printf("\nFACTORIAL! \n");
     printf("Insert the number: \n");
@@ -177,17 +178,13 @@ void fact(void){
 
     if(num > 0){
         printf("%d factorial is: ", num);
-        for(int i=num-1; i>0; i--){
-            num *= i;
+        for(int i=1; i<=num; i++){
+            result *= i;
         }
-        printf("%d \n", num);
-    }
-
-    if(num == 0){
+        printf("%llu \n", result);
+    } else if(num == 0){
         printf("0 factorial is: 1 \n");
-    }
-
-    if (num < 0){
+    } else{
         printf("ERROR! \n");
     }
 }
