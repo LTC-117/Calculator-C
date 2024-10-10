@@ -46,7 +46,7 @@ void sum(void){
     scanf("%d", &amount_sum);
     printf("Insert the %d numbers:\n", amount_sum);
 
-    float *num_sum = (float *)malloc(amount_sum * sizeof(float));
+    float *num_sum = malloc(amount_sum * sizeof(float));
     float result_sum = 0;
 
     for(int i=0; i<amount_sum; i++){
@@ -68,7 +68,7 @@ void sub(void){
     scanf("%d", &amount_sub);
     printf("Insert the %d numbers:\n", amount_sub);
 
-    float *num_sub = (float *)malloc(amount_sub * sizeof(float));
+    float *num_sub = malloc(amount_sub * sizeof(float));
     float result_sub = 0;
 
     for(int i=0; i<amount_sub; i++){
@@ -90,7 +90,7 @@ void multi(void){
     scanf("%d", &amount_multi);
     printf("Insert the %d numbers:\n", amount_multi);
 
-    float *num_multi = (float *)malloc(amount_multi * sizeof(float));
+    float *num_multi = malloc(amount_multi * sizeof(float));
     float result_multi = 1;
 
     for(int i=0; i<amount_multi; i++){
@@ -140,9 +140,9 @@ void matrix(void){
     printf("Insert the amount of columns:\n");
     scanf("%d", &n);
 
-    int **mtx = (int **)malloc(m * sizeof (int *));
+    int **mtx = malloc(m * sizeof (int *));
         for(int i=0; i<m; i++){
-            mtx[i] = (int *)malloc(n * sizeof (int));
+            mtx[i] = malloc(n * sizeof (int));
         }
 
     printf("Now insert the %d elements of your matrix:\n", m*n);
