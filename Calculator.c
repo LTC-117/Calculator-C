@@ -3,13 +3,13 @@
 #include <math.h>
 
 //functions:
-void sum();
-void sub();
-void multi();
-void divis();
-void sqt();
-void matrix();
-void fact();
+void add_numbers();
+void subtract_numbers();
+void multiply_numbers();
+void divide_numbers();
+void square_root();
+void matrix_generator();
+void factorial_calculator();
 
 int main (){
     int entry;
@@ -21,22 +21,39 @@ int main (){
         printf("\nInsert your operation: ");
         scanf("%d", &entry);
         switch(entry){
-            case 1: sum(); break;
-            case 2: sub(); break;
-            case 3: multi(); break;
-            case 4: divis(); break;
-            case 5: sqt(); break;
-            case 6: matrix(); break;
-            case 7: fact(); break;
-            case 8: printf("\nGOODBYE!"); break;
-            default: printf("INVALID OPTION! PLEASE, TRY AGAIN: \n");
+            case 1:
+                add_numbers(); 
+                break;
+            case 2:
+                subtract_numbers(); 
+                break;
+            case 3:
+                multiply_numbers(); 
+                break;
+            case 4:
+                divide_numbers(); 
+                break;
+            case 5:
+                square_root(); 
+                break;
+            case 6:
+                matrix_generator(); 
+                break;
+            case 7:
+                factorial_calculator(); 
+                break;
+            case 8:
+                printf("\nGOODBYE!"); 
+                break;
+            default:
+                printf("INVALID OPTION! PLEASE, TRY AGAIN: \n");
         }
     } while (entry != 8);
 
     return 0;
 }
 
-void sum(void){
+void add_numbers(void){
     int amount_sum;
 
     printf("\nADITION!\n");
@@ -58,7 +75,7 @@ void sum(void){
     free(num_sum);
 }
 
-void sub(void){
+void subtract_numbers(void){
     int amount_sub;
 
     printf("\nSUBTRACTION!\n");
@@ -80,7 +97,7 @@ void sub(void){
     free(num_sub);
 }
 
-void multi(void){
+void multiply_numbers(void){
     int amount_multi;
 
     printf("\nMULTIPLICATION!\n");
@@ -102,23 +119,23 @@ void multi(void){
     free(num_multi);
 }
 
-void divis(void){
-    float A, B;
+void divide_numbers(void){
+    float numerator, denominator;
 
     printf("\nDIVISION! \n");
-    printf("Insert A:\n");
-    scanf("%f", &A);
-    printf("Insert B:\n");
-    scanf("%f", &B);
-    if(B!=0){
-        printf("The result is: %.2f \n", A/B);
+    printf("Insert numerator:\n");
+    scanf("%f", &numerator);
+    printf("Insert denominator:\n");
+    scanf("%f", &denominator);
+    if(denominator!=0){
+        printf("The result is: %.2f \n", numerator/denominator);
     }
     else{
         printf("ERROR \n");
     }
 }
 
-void sqt(void){
+void square_root(void){
     float S;
 
     printf("\nSQUARE ROOT! \n");
@@ -132,7 +149,7 @@ void sqt(void){
     }
 }
 
-void matrix(void){
+void matrix_generator(void){
     int m, n;
 
     printf("\nMATRIX GENERATOR! \n");
@@ -168,12 +185,12 @@ void matrix(void){
     free(mtx);
 }
 
-void fact(void){
+void factorial_calculator(void){
     int num;
     unsigned long long result = 1;
 
     printf("\nFACTORIAL! \n");
-    printf("Insert the number: \n");
+    printf("Insert the number: ");
     scanf("%d", &num);
 
     if(num > 0){
