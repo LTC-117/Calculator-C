@@ -22,28 +22,28 @@ int main (){
         scanf("%d", &entry);
         switch(entry){
             case 1:
-                add_numbers(); 
+                add_numbers();
                 break;
             case 2:
-                subtract_numbers(); 
+                subtract_numbers();
                 break;
             case 3:
-                multiply_numbers(); 
+                multiply_numbers();
                 break;
             case 4:
-                divide_numbers(); 
+                divide_numbers();
                 break;
             case 5:
-                square_root(); 
+                square_root();
                 break;
             case 6:
-                matrix_generator(); 
+                matrix_generator();
                 break;
             case 7:
-                factorial_calculator(); 
+                factorial_calculator();
                 break;
             case 8:
-                printf("\nGOODBYE!"); 
+                printf("\nGOODBYE!");
                 break;
             default:
                 printf("INVALID OPTION! PLEASE, TRY AGAIN: \n");
@@ -67,7 +67,7 @@ void add_numbers(void){
     for(int i=0; i<amount_sum; i++){
         printf("Number %d: ", i+1);
         scanf("%f", &num_sum[i]);
-        result_sum += *num_sum;
+        result_sum += num_sum[i];
     }
 
     printf("Result is: %.2f", result_sum);
@@ -89,7 +89,7 @@ void subtract_numbers(void){
     for(int i=0; i<amount_sub; i++){
         printf("Number %d: ", i+1);
         scanf("%f", &num_sub[i]);
-        result_sub -= *num_sub;
+        result_sub -= num_sub[i];
     }
 
     printf("Result is: %.2f", result_sub);
@@ -111,7 +111,7 @@ void multiply_numbers(void){
     for(int i=0; i<amount_multi; i++){
         printf("Number %d: ", i+1);
         scanf("%f", &num_multi[i]);
-        result_multi *= *num_multi;
+        result_multi *= num_multi[i];
     }
 
     printf("Result is: %.2f", result_multi);
@@ -120,29 +120,29 @@ void multiply_numbers(void){
 }
 
 void divide_numbers(void){
-    float numerator, denominator;
+    float num, denom;
 
     printf("\nDIVISION! \n");
     printf("Insert numerator:\n");
-    scanf("%f", &numerator);
+    scanf("%f", &num);
     printf("Insert denominator:\n");
-    scanf("%f", &denominator);
-    if(denominator!=0){
-        printf("The result is: %.2f \n", numerator/denominator);
+    scanf("%f", &denom);
+    if(denom!=0){
+        printf("The result is: %.2f \n", num/denom);
     }
     else{
-        printf("ERROR \n");
+        printf("ERROR! Division by zero is not allowed! \n");
     }
 }
 
 void square_root(void){
-    float S;
+    float radicand;
 
     printf("\nSQUARE ROOT! \n");
     printf("Insert the number:\n");
-    scanf("%f", &S);
-    if(S>=0){
-        printf("The result is: %.2f \n", sqrt(S));
+    scanf("%f", &radicand);
+    if(radicand>=0){
+        printf("The result is: %.2f \n", sqrt(radicand));
     }
     else{
         printf("ERROR! \n");
@@ -158,48 +158,48 @@ void matrix_generator(void){
     printf("Insert the amount of columns:\n");
     scanf("%d", &n);
 
-    int **mtx = malloc(m * sizeof (int *));
+    int **matrix = malloc(m * sizeof (int *));
         for(int i=0; i<m; i++){
-            mtx[i] = malloc(n * sizeof (int));
+            matrix[i] = malloc(n * sizeof (int));
         }
 
     printf("Now insert the %d elements of your matrix:\n", m*n);
     for (int i=0; i<m; i++){
         for (int j=0; j<n; j++){
             printf("Element a[%d][%d]: ", i+1, j+1);
-            scanf("%d", &mtx[i][j]);
+            scanf("%d", &matrix[i][j]);
         }
     }
 
     printf("Your matrix:\n\n");
     for (int i=0; i<m; i++){
         for (int j=0; j<n; j++){
-            printf("%d ", mtx[i][j]);
+            printf("%d ", matrix[i][j]);
         }
         printf("\n");
     }
 
     for (int i=0; i<m; i++){
-        free (mtx[i]);
+        free (matrix[i]);
     }
-    free(mtx);
+    free(matrix);
 }
 
 void factorial_calculator(void){
-    int num;
+    int factorial_num;
     unsigned long long result = 1;
 
     printf("\nFACTORIAL! \n");
     printf("Insert the number: ");
-    scanf("%d", &num);
+    scanf("%d", &factorial_num);
 
-    if(num > 0){
-        printf("%d factorial is: ", num);
-        for(int i=1; i<=num; i++){
+    if(factorial_num > 0){
+        printf("%d factorial is: ", factorial_num);
+        for(int i=1; i<=factorial_num; i++){
             result *= i;
         }
         printf("%llu \n", result);
-    } else if(num == 0){
+    } else if(factorial_num == 0){
         printf("0 factorial is: 1 \n");
     } else{
         printf("ERROR! \n");
