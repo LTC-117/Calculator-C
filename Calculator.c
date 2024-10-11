@@ -159,9 +159,9 @@ void matrix_generator(void){
     scanf("%d", &n);
 
     int **matrix = malloc(m * sizeof (int *));
-        for(int i=0; i<m; i++){
-            matrix[i] = malloc(n * sizeof (int));
-        }
+    for(int i=0; i<m; i++){
+        matrix[i] = malloc(n * sizeof (int));
+    }
 
     printf("Now insert the %d elements of your matrix:\n", m*n);
     for (int i=0; i<m; i++){
@@ -199,9 +199,11 @@ void factorial_calculator(void){
             result *= i;
         }
         printf("%llu \n", result);
-    } else if(factorial_num == 0){
+    }
+    else if(factorial_num == 0){
         printf("0 factorial is: 1 \n");
-    } else{
+    }
+    else{
         printf("ERROR! \n");
     }
 }
