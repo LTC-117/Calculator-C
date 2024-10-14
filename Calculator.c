@@ -17,6 +17,7 @@ int main (){
     printf("Welcome to the calculator! Our operations are:\n\n");
     printf(" 1: Adition\n 2: Subtraction\n 3: Multiplication\n 4: Division\n");
     printf(" 5: Square Root\n 6: Matrix Generator\n 7: Factorial\n 8: Exit \n");
+
     do{
         printf("\nInsert your operation: ");
         scanf("%d", &entry);
