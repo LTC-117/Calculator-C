@@ -44,7 +44,8 @@ int main (){
                 factorial_calculator();
                 break;
             case 8:
-                printf("\nGOODBYE!");
+                printf("\nPress ENTER to exit!");
+                exit(1);
                 break;
             default:
                 printf("INVALID OPTION! PLEASE, TRY AGAIN: \n");
