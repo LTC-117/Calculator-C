@@ -160,9 +160,9 @@ void matrix_generator(void){
     printf("Insert the amount of columns:\n");
     scanf("%d", &n);
 
-    int **matrix = malloc(m * sizeof (int *));
+    int **matrix = calloc(m, sizeof (int *));
     for(int i=0; i<m; i++){
-        matrix[i] = malloc(n * sizeof (int));
+        matrix[i] = calloc(n, sizeof (int));
     }
 
     printf("Now insert the %d elements of your matrix:\n", m*n);
