@@ -11,14 +11,18 @@ void square_root();
 void matrix_generator();
 void factorial_calculator();
 
+//Quitting character
+char c;
+
 int main (){
     int entry;
 
-    printf("Welcome to the calculator! Our operations are:\n\n");
-    printf(" 1: Adition\n 2: Subtraction\n 3: Multiplication\n 4: Division\n");
-    printf(" 5: Square Root\n 6: Matrix Generator\n 7: Factorial\n 8: Exit \n");
-
     do{
+        printf("\x1b[2J");
+        printf("\x1b[H");
+        printf("Welcome to the calculator! Our operations are:\n\n");
+        printf(" 1: Adition\n 2: Subtraction\n 3: Multiplication\n 4: Division\n");
+        printf(" 5: Square Root\n 6: Matrix Generator\n 7: Factorial\n 8: Exit \n");
         printf("\nInsert your operation: ");
         scanf("%d", &entry);
         switch(entry){
@@ -58,7 +62,10 @@ int main (){
 void add_numbers(void){
     int amount_sum;
 
-    printf("\nADITION!\n");
+    printf("\x1b[2J");
+    printf("\x1b[H");
+
+    printf("ADITION!\n");
     printf("How many numbers would you like to add? ");
     scanf("%d", &amount_sum);
     printf("Insert the %d numbers:\n", amount_sum);
@@ -75,12 +82,20 @@ void add_numbers(void){
     printf("Result is: %.2f", result_sum);
 
     free(num_sum);
+
+    do{
+        printf("\nPress 'q' to go back to menu!");
+        c = getchar();
+    }while(c != 'q');
 }
 
 void subtract_numbers(void){
     int amount_sub;
 
-    printf("\nSUBTRACTION!\n");
+    printf("\x1b[2J");
+    printf("\x1b[H");
+
+    printf("SUBTRACTION!\n");
     printf("How many numbers would you like to subtract? ");
     scanf("%d", &amount_sub);
     printf("Insert the %d numbers:\n", amount_sub);
@@ -97,12 +112,20 @@ void subtract_numbers(void){
     printf("Result is: %.2f", result_sub);
 
     free(num_sub);
+
+    do{
+        printf("\nPress 'q' to go back to menu!");
+        c = getchar();
+    }while(c != 'q');
 }
 
 void multiply_numbers(void){
     int amount_multi;
 
-    printf("\nMULTIPLICATION!\n");
+    printf("\x1b[2J");
+    printf("\x1b[H");
+
+    printf("MULTIPLICATION!\n");
     printf("How many numbers would you like to multiply? ");
     scanf("%d", &amount_multi);
     printf("Insert the %d numbers:\n", amount_multi);
@@ -119,12 +142,20 @@ void multiply_numbers(void){
     printf("Result is: %.2f", result_multi);
 
     free(num_multi);
+
+    do{
+        printf("\nPress 'q' to go back to menu!");
+        c = getchar();
+    }while(c != 'q');
 }
 
 void divide_numbers(void){
     float num, denom;
 
-    printf("\nDIVISION! \n");
+    printf("\x1b[2J");
+    printf("\x1b[H");
+
+    printf("DIVISION! \n");
     printf("Insert numerator:\n");
     scanf("%f", &num);
     printf("Insert denominator:\n");
@@ -135,12 +166,20 @@ void divide_numbers(void){
     else{
         printf("ERROR! Division by zero is not allowed! \n");
     }
+
+    do{
+        printf("\nPress 'q' to go back to menu!");
+        c = getchar();
+    }while(c != 'q');
 }
 
 void square_root(void){
     float radicand;
 
-    printf("\nSQUARE ROOT! \n");
+    printf("\x1b[2J");
+    printf("\x1b[H");
+
+    printf("SQUARE ROOT! \n");
     printf("Insert the number:\n");
     scanf("%f", &radicand);
     if(radicand>=0){
@@ -149,12 +188,20 @@ void square_root(void){
     else{
         printf("ERROR! \n");
     }
+
+    do{
+        printf("\nPress 'q' to go back to menu!");
+        c = getchar();
+    }while(c != 'q');
 }
 
 void matrix_generator(void){
     int m, n;
 
-    printf("\nMATRIX GENERATOR! \n");
+    printf("\x1b[2J");
+    printf("\x1b[H");
+
+    printf("MATRIX GENERATOR! \n");
     printf("Insert the amount of lines:\n");
     scanf("%d", &m);
     printf("Insert the amount of columns:\n");
@@ -185,13 +232,21 @@ void matrix_generator(void){
         free (matrix[i]);
     }
     free(matrix);
+
+    do{
+        printf("\nPress 'q' to go back to menu!");
+        c = getchar();
+    }while(c != 'q');
 }
 
 void factorial_calculator(void){
     int factorial_num;
     unsigned long long result = 1;
 
-    printf("\nFACTORIAL! \n");
+    printf("\x1b[2J");
+    printf("\x1b[H");
+
+    printf("FACTORIAL! \n");
     printf("Insert the number: ");
     scanf("%d", &factorial_num);
 
@@ -208,4 +263,9 @@ void factorial_calculator(void){
     else{
         printf("ERROR! \n");
     }
+
+    do{
+        printf("\nPress 'q' to go back to menu!");
+        c = getchar();
+    }while(c != 'q');
 }
